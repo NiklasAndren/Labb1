@@ -72,12 +72,16 @@ namespace Lab1.Helpers
         /// <summary>
         /// Property som innehåller ett välkomstmeddelande
         /// </summary>
-        private static string GreetingMessage
+        public static string GreetingMessage()
         {
-            get
-            {
+          
                 return string.Format("\n\nWelcome! {0}", EnterCommand);
-            }
+            
+        }
+
+        public static void Put(string Message)
+        {
+           Console.WriteLine(Message);
         }
     }
 }

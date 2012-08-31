@@ -40,28 +40,7 @@ namespace Lab1.Model
         {
             ParserState = (int)State.Default;
         }
-
-        /// <summary>
-        /// Returnerar en int som motsvarar Default State
-        /// </summary>
-        
-
-        /// <summary>
-        /// Sätter ParserState till Exit
-        /// </summary>
-        private void SetExitParserState()
-        {
-            ParserState = (int)State.Exit;
-        }
-
-        /// <summary>
-        /// Returnerar en int som motsvarar Exit State
-        /// </summary>
-        
-
-        /// <summary>
-        /// Returnerar true om ParserState är Exit (eller rättare sagt -1)
-        /// </summary>
+       
         public bool IsStateExit
         {
             get
@@ -107,7 +86,7 @@ namespace Lab1.Model
                     result = OutputHelper.RootCommandList;
                     break;
                 case "exit":
-                    SetExitParserState(); // Lägg märke till att vi utför en Action här.
+                    ParserState = (int)State.Exit; // Lägg märke till att vi utför en Action här.
                     result = OutputHelper.ExitMessage("Bye!"); // Det går bra att skicka parametrar
                     break;
                 default:

@@ -20,7 +20,7 @@ namespace Lab1
             // parseResult används för att hålla resultatet av en tolkning från inputParser
             string parseResult;
 
-            Console.WriteLine("\n\nEnter command + [enter] (help: ?):");
+            OutputHelper.Put(OutputHelper.GreetingMessage());
             while (!exit)
             {
                 // Hämta input från användaren
@@ -30,7 +30,7 @@ namespace Lab1
                 parseResult = inputParser.ParseInput(input);
 
                 // Skriv ut resultatet från tolkningen
-                Console.WriteLine(parseResult);
+                OutputHelper.Put(parseResult);
 
                 // Avsluta programmet om inputParser är i tillståndet "Exit"
                 if (inputParser.IsStateExit)
