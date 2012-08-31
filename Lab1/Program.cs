@@ -21,7 +21,6 @@ namespace Lab1
             string parseResult;
 
             Console.WriteLine("\n\nEnter command + [enter] (help: ?):");
-            OutputHelper.GreetingMessage;
             while (!exit)
             {
                 // Hämta input från användaren
