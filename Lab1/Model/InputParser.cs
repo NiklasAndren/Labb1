@@ -32,7 +32,7 @@ namespace Lab1.Model
         /// <summary>
         /// Sätter ParserState till Default
         /// </summary>
-        public void SetDefaultParserState()
+        public InputParser()
         {
             ParserState = 1;
         }
@@ -96,7 +96,6 @@ namespace Lab1.Model
             }
             else
             {
-                SetDefaultParserState();
                 return OutputHelper.ErrorLostState;
             }
         }
