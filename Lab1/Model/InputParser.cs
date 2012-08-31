@@ -27,6 +27,10 @@ namespace Lab1.Model
         /// Och -1 som är det tillståndet som InputParser går in i när programmet skall avslutas
         /// Ifall nya tillstånd implementeras skulle de kunna vara 2, 3, 4, etc.
         /// </summary>
+        /// 
+
+        private enum State { Exit=-1, Default=1 } 
+        
         private int ParserState { get; set; }
 
         /// <summary>
@@ -34,38 +38,26 @@ namespace Lab1.Model
         /// </summary>
         public InputParser()
         {
-            ParserState = 1;
+            ParserState = (int)State.Default;
         }
 
         /// <summary>
         /// Returnerar en int som motsvarar Default State
         /// </summary>
-        private int DefaultParserState
-        {
-            get
-            {
-                return 1;
-            }
-        }
+        
 
         /// <summary>
         /// Sätter ParserState till Exit
         /// </summary>
         private void SetExitParserState()
         {
-            ParserState = -1;
+            ParserState = (int)State.Exit;
         }
 
         /// <summary>
         /// Returnerar en int som motsvarar Exit State
         /// </summary>
-        private int ExitParserState
-        {
-            get
-            {
-                return -1;
-            }
-        }
+        
 
         /// <summary>
         /// Returnerar true om ParserState är Exit (eller rättare sagt -1)
@@ -74,7 +66,7 @@ namespace Lab1.Model
         {
             get
             {
-                return ParserState == ExitParserState;
+                return ParserState == (int)State.Exit;
             }
         }
 
@@ -85,11 +77,11 @@ namespace Lab1.Model
         /// <returns></returns>
         public string ParseInput(string input)
         {
-            if (ParserState == DefaultParserState)
+            if (ParserState == (int)State.Default)
             {
                 return ParseDefaultStateInput(input);
             }
-            else if (ParserState == ExitParserState)
+            else if (ParserState == (int)State.Exit)
             {
                 // Do nothing - program should exit
                 return "";
