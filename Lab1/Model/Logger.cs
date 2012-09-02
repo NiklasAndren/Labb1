@@ -25,7 +25,13 @@ namespace Lab1.Model
 
         public override string ToString()
         {
-            return string.Format("{0}\n", LogList);
+            string MyList = "";
+            foreach (string s in LogList)
+            {
+                MyList += "\n" + s;
+            }
+
+            return MyList;
         }
 
     }
