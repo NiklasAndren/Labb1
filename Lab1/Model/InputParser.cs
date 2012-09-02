@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Lab1.Helpers;
+using Lab1.Model.Repository.Abstract;
 
 namespace Lab1.Model
 {
@@ -36,7 +37,7 @@ namespace Lab1.Model
         /// <summary>
         /// Sätter ParserState till Default
         /// </summary>
-        public InputParser()
+        public InputParser(IRepository Repo)
         {
             ParserState = (int)State.Default;
         }
