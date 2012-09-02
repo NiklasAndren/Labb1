@@ -33,6 +33,7 @@ namespace Lab1.Model
         private enum State { Exit=-1, Default=1 } 
         
         private int ParserState { get; set; }
+        private Logger InputLog = new Logger();
 
         /// <summary>
         /// Sätter ParserState till Default
@@ -57,6 +58,7 @@ namespace Lab1.Model
         /// <returns></returns>
         public string ParseInput(string input)
         {
+            InputLog.Log(input);
             if (ParserState == (int)State.Default)
             {
                 return ParseDefaultStateInput(input);
@@ -89,6 +91,9 @@ namespace Lab1.Model
                 case "exit":
                     ParserState = (int)State.Exit; // Lägg märke till att vi utför en Action här.
                     result = OutputHelper.ExitMessage("Bye!"); // Det går bra att skicka parametrar
+                    break;
+                case "log":
+                    result = InputLog.ToString();
                     break;
                 default:
                     result = OutputHelper.ErrorInvalidInput;

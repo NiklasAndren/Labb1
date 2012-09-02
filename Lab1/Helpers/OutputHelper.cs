@@ -19,6 +19,7 @@ namespace Lab1.Helpers
             {
                 string returnString = "\n\nList of Commands:";
                 returnString += "\n\t?/help:\tPrints this list of commands.";
+                returnString += "\n\tlog:\tLists your previous commands.";
                 returnString += "\n\texit:\tExits the program.";
 
                 return returnString;
