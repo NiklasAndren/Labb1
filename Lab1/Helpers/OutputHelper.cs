@@ -20,6 +20,8 @@ namespace Lab1.Helpers
                 string returnString = "\n\nList of Commands:";
                 returnString += "\n\t?/help:\tPrints this list of commands.";
                 returnString += "\n\tlog:\tLists your previous commands.";
+                returnString += "\n\tfunc:\tAn Explanation of Func<int,bool>";
+                returnString += "\n\tdictionary:\tPrints out Dictionary";
                 returnString += "\n\texit:\tExits the program.";
 
                 return returnString;
@@ -83,6 +85,24 @@ namespace Lab1.Helpers
         public static void Put(string Message)
         {
            Console.WriteLine(Message);
+        }
+
+        public static string FuncExplanation()
+        {
+            return "\nFunc<int,bool> - ";
+        }
+
+        public static string MyDictionary()
+        {
+            string MyDict = "";
+            Dictionary<string,string> dictionary = new Dictionary<string,string>();
+            foreach (KeyValuePair<string,string> item in dictionary)
+            {
+                MyDict += item.Key;
+                MyDict += item.Value;
+            }
+
+            return MyDict;
         }
     }
 }

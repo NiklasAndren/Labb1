@@ -95,6 +95,12 @@ namespace Lab1.Model
                 case "log":
                     result = InputLog.ToString();
                     break;
+                case "func":
+                    result = OutputHelper.FuncExplanation();
+                    break;
+                case "dictionary":
+                    result = OutputHelper.MyDictionary();
+                    break;
                 default:
                     result = OutputHelper.ErrorInvalidInput;
                     break;
