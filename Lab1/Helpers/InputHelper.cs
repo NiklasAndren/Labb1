@@ -16,7 +16,7 @@ namespace Lab1.Helpers
         /// <returns>En sträng som tagits emot från användaren</returns>
         public static string GetUserInput()
         {
-            return Console.ReadLine();
+            return Console.ReadLine().ToLower();
         }
     }
 }
