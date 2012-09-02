@@ -34,6 +34,8 @@ namespace Lab1.Model
         
         private int ParserState { get; set; }
         private Logger InputLog = new Logger();
+        private Repository.Repository Repos = new Repository.Repository();
+        
 
         /// <summary>
         /// Sätter ParserState till Default
@@ -100,6 +102,9 @@ namespace Lab1.Model
                     break;
                 case "dictionary":
                     result = OutputHelper.MyDictionary();
+                    break;
+                case "list":
+                    result = OutputHelper.ListUsers().Take(10).ToList;
                     break;
                 default:
                     result = OutputHelper.ErrorInvalidInput;

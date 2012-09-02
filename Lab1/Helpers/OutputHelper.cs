@@ -104,5 +104,19 @@ namespace Lab1.Helpers
 
             return MyDict;
         }
+
+
+        public static string ListUsers(List<string> Users)
+        {
+            string MyString = "";
+
+            foreach (string user in Users)
+            {
+                MyString = string.Format("{0}\n", user);
+            }
+
+            return MyString;
+        }
+
     }
 }
