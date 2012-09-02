@@ -103,9 +103,9 @@ namespace Lab1.Model
                 case "dictionary":
                     result = OutputHelper.MyDictionary();
                     break;
-                case "list":
+                /*case "list":
                     result = OutputHelper.ListUsers().Take(10).ToList;
-                    break;
+                    break;*/
                 default:
                     result = OutputHelper.ErrorInvalidInput;
                     break;
